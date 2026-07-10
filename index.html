@@ -8,17 +8,69 @@
 </head>
 <body class="page">
     <main class="card">
-        <div class="badge">
-            <span class="badge-dot" aria-hidden="true"></span>
-            <span>OpenClaw Demo</span>
-        </div>
+        <header class="topbar">
+            <div class="brand">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <span class="brand-name">OpenClaw</span>
+            </div>
 
-        <h1>Hello from Telegram and OpenClaw!</h1>
-        <p>This project is controlled using Telegram.</p>
+            <div class="status">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span class="status-text">Ready for commands</span>
+            </div>
+        </header>
 
-        <div class="meta">
-            Controlled by Telegram commands. Try <code>/settitle</code> or <code>/settext</code>.
-        </div>
+        <section class="hero">
+            <div class="badge">
+                <span class="badge-dot" aria-hidden="true"></span>
+                <span>Dashboard</span>
+            </div>
+
+            <h1>Hello from Telegram and OpenClaw!</h1>
+            <p>This project is controlled using Telegram.</p>
+
+            <div class="meta">
+                Tip: try <code>/settitle</code> or <code>/settext</code> from your Telegram chat.
+            </div>
+        </section>
+
+        <section class="grid">
+            <div class="panel">
+                <div class="panel-title">Quick commands</div>
+                <div class="panel-body">
+                    <a class="btn btn-primary" href="#" role="button" aria-label="Set title command">
+                        <span class="btn-label">/settitle</span>
+                        <span class="btn-sub">Update heading</span>
+                    </a>
+                    <a class="btn" href="#" role="button" aria-label="Set text command">
+                        <span class="btn-label">/settext</span>
+                        <span class="btn-sub">Update paragraph</span>
+                    </a>
+                    <a class="btn" href="#" role="button" aria-label="Show command">
+                        <span class="btn-label">/show</span>
+                        <span class="btn-sub">Preview current UI</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">What this page does</div>
+                <div class="panel-body">
+                    <div class="bullet">
+                        <span class="bullet-icon" aria-hidden="true"></span>
+                        <span>Updates UI text from Telegram messages.</span>
+                    </div>
+                    <div class="bullet">
+                        <span class="bullet-icon" aria-hidden="true"></span>
+                        <span>Stays glossy and readable with a glass theme.</span>
+                    </div>
+                    <div class="bullet">
+                        <span class="bullet-icon" aria-hidden="true"></span>
+                        <span>No backend UI needed—just the Telegram bot.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>
