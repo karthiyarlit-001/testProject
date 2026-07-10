@@ -41,12 +41,53 @@ body::before{
   transform: rotate(-2deg);
 }
 
+/* Anime-style "Zoro" slashes (abstract/green slash streaks) */
+body::after{
+  content:"";
+  position:fixed;
+  inset:-30%;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(circle at 18% 28%, rgba(56,189,248,.18), transparent 46%),
+    radial-gradient(circle at 82% 72%, rgba(167,139,250,.16), transparent 48%),
+    repeating-linear-gradient(
+      112deg,
+      rgba(34,197,94,0) 0px,
+      rgba(34,197,94,.28) 22px,
+      rgba(34,197,94,0) 44px
+    );
+  mix-blend-mode: screen;
+  opacity:.22;
+  filter: blur(0.6px);
+  animation: zoro-slashes 8s linear infinite, zoro-glow-drift 14s ease-in-out infinite;
+}
+
+@keyframes zoro-slashes{
+  0%{
+    transform: translate3d(-2%, -2%, 0) rotate(-6deg) scale(1.02);
+    background-position: 0px 0px, 0px 0px, -140px -60px;
+  }
+  100%{
+    transform: translate3d(2.5%, 2.5%, 0) rotate(8deg) scale(1.02);
+    background-position: 200px 120px, -180px -120px, 160px 80px;
+  }
+}
+
+@keyframes zoro-glow-drift{
+  0%{ opacity:.18; filter: blur(0.6px); }
+  45%{ opacity:.28; filter: blur(1.2px); }
+  100%{ opacity:.18; filter: blur(0.6px); }
+}
+
 .page{
   min-height:100%;
   display:flex;
   align-items:center;
   justify-content:center;
   padding: clamp(18px, 4vw, 44px);
+  position:relative;
+  z-index:1;
 }
 
 .topbar{
@@ -328,6 +369,10 @@ p{
   border: 1px solid rgba(255,255,255,.14);
   padding: 2px 7px;
   border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  body::after{ animation:none; }
 }
 
 @media (max-width: 520px){
